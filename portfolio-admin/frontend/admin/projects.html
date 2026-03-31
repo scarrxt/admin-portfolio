@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin Projects</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/admin.css">
+	<script src="../js/api.js" defer></script>
+	<script src="../js/auth.js" defer></script>
+	<script src="../js/admin/layout.js" defer></script>
+	<script src="../js/admin/projects.js" defer></script>
+</head>
+<body>
+	<div class="admin-body">
+		<aside class="admin-sidebar">
+			<h2 class="admin-brand">Portfolio Admin</h2>
+			<nav class="admin-nav">
+				<a data-nav-link href="index.html">Overview</a>
+				<a data-nav-link href="projects.html">Projects</a>
+				<a data-nav-link href="inbox.html">Inbox</a>
+				<a data-nav-link href="settings.html">Settings</a>
+			</nav>
+		</aside>
+
+		<main class="admin-main">
+			<header class="admin-header">
+				<h1>Projects</h1>
+				<div class="admin-user">
+					<img class="admin-avatar" data-admin-image src="" alt="Admin avatar">
+					<strong data-admin-username>Admin</strong>
+					<button id="logoutBtn" class="ghost" type="button">Logout</button>
+				</div>
+			</header>
+
+			<p id="layoutError" class="error-msg hidden"></p>
+
+			<section class="section card">
+				<button id="toggleProjectForm" type="button">Add Project</button>
+				<form id="projectForm" class="form-grid hidden" style="margin-top: 1rem;">
+					<input type="hidden" id="projectId" name="projectId">
+					<div class="form-row">
+						<div>
+							<label for="project_name">Project Name</label>
+							<input id="project_name" name="project_name" required>
+						</div>
+						<div>
+							<label for="title">Title</label>
+							<input id="title" name="title" required>
+						</div>
+					</div>
+					<div>
+						<label for="description">Description</label>
+						<textarea id="description" name="description" required></textarea>
+					</div>
+					<div>
+						<label for="image_url">Image URL</label>
+						<input id="image_url" name="image_url" required>
+					</div>
+					<div class="inline-actions">
+						<button id="projectSubmit" type="submit">Save Project</button>
+						<button id="projectCancel" class="ghost" type="button">Cancel</button>
+					</div>
+				</form>
+				<p id="projectFormError" class="error-msg hidden"></p>
+				<p id="projectFormSuccess" class="success-msg hidden"></p>
+			</section>
+
+			<p id="projectsLoading" class="loading">Loading projects...</p>
+			<p id="projectsError" class="error-msg hidden"></p>
+
+			<section class="table-wrap">
+				<table>
+					<thead>
+						<tr>
+							<th>Image</th>
+							<th>Project Name</th>
+							<th>Title</th>
+							<th>Description</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody id="projectsTableBody"></tbody>
+				</table>
+			</section>
+		</main>
+	</div>
+</body>
+</html>

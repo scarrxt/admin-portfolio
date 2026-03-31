@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin Overview</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/admin.css">
+	<script src="../js/api.js" defer></script>
+	<script src="../js/auth.js" defer></script>
+	<script src="../js/admin/layout.js" defer></script>
+	<script src="../js/admin/overview.js" defer></script>
+</head>
+<body>
+	<div class="admin-body">
+		<aside class="admin-sidebar">
+			<h2 class="admin-brand">Portfolio Admin</h2>
+			<nav class="admin-nav">
+				<a data-nav-link href="index.html">Overview</a>
+				<a data-nav-link href="projects.html">Projects</a>
+				<a data-nav-link href="inbox.html">Inbox</a>
+				<a data-nav-link href="settings.html">Settings</a>
+			</nav>
+		</aside>
+
+		<main class="admin-main">
+			<header class="admin-header">
+				<h1>Overview</h1>
+				<div class="admin-user">
+					<img class="admin-avatar" data-admin-image src="" alt="Admin avatar">
+					<strong data-admin-username>Admin</strong>
+					<button id="logoutBtn" class="ghost" type="button">Logout</button>
+				</div>
+			</header>
+
+			<p id="layoutError" class="error-msg hidden"></p>
+			<p id="overviewLoading" class="loading">Loading dashboard data...</p>
+			<p id="overviewError" class="error-msg hidden"></p>
+
+			<section id="overviewStats" class="stats-grid hidden">
+				<article class="stat-card card">
+					<h3>Total Projects</h3>
+					<p id="totalProjects" class="stat-value">0</p>
+				</article>
+				<article class="stat-card card">
+					<h3>Total Messages</h3>
+					<p id="totalMessages" class="stat-value">0</p>
+				</article>
+			</section>
+		</main>
+	</div>
+</body>
+</html>

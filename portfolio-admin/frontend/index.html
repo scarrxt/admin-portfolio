@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portfolio</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/public.css">
+	<script src="./js/api.js" defer></script>
+	<script src="./js/public/home.js" defer></script>
+</head>
+<body>
+	<main class="public-shell">
+		<section class="public-hero">
+			<h1>Portfolio</h1>
+			<p>Selected work, a short profile, and an easy way to get in touch.</p>
+			<article class="bio-card card">
+				<h2 class="section-title">About Me</h2>
+				<div id="bioContent" class="loading">Loading bio...</div>
+				<p id="bioError" class="error-msg hidden"></p>
+			</article>
+		</section>
+
+		<section>
+			<h2 class="section-title">Projects</h2>
+			<div id="projectsState" class="loading">Loading projects...</div>
+			<p id="projectsError" class="error-msg hidden"></p>
+			<div id="projectsGrid" class="projects-grid"></div>
+		</section>
+
+		<section class="contact-wrap card">
+			<h2 class="section-title">Contact</h2>
+			<form id="contactForm" class="contact-grid">
+				<div>
+					<label for="name">Name</label>
+					<input id="name" name="name" type="text" required>
+				</div>
+				<div>
+					<label for="email">Email</label>
+					<input id="email" name="email" type="email" required>
+				</div>
+				<div>
+					<label for="message">Message</label>
+					<textarea id="message" name="message" required></textarea>
+				</div>
+				<button type="submit">Send Message</button>
+			</form>
+			<p id="contactSuccess" class="success-msg hidden"></p>
+			<p id="contactError" class="error-msg hidden"></p>
+		</section>
+	</main>
+</body>
+</html>

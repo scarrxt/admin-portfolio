@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin Settings</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/admin.css">
+	<script src="../js/api.js" defer></script>
+	<script src="../js/auth.js" defer></script>
+	<script src="../js/admin/layout.js" defer></script>
+	<script src="../js/admin/settings.js" defer></script>
+</head>
+<body>
+	<div class="admin-body">
+		<aside class="admin-sidebar">
+			<h2 class="admin-brand">Portfolio Admin</h2>
+			<nav class="admin-nav">
+				<a data-nav-link href="index.html">Overview</a>
+				<a data-nav-link href="projects.html">Projects</a>
+				<a data-nav-link href="inbox.html">Inbox</a>
+				<a data-nav-link href="settings.html">Settings</a>
+			</nav>
+		</aside>
+
+		<main class="admin-main">
+			<header class="admin-header">
+				<h1>Settings</h1>
+				<div class="admin-user">
+					<img class="admin-avatar" data-admin-image src="" alt="Admin avatar">
+					<strong data-admin-username>Admin</strong>
+					<button id="logoutBtn" class="ghost" type="button">Logout</button>
+				</div>
+			</header>
+
+			<p id="layoutError" class="error-msg hidden"></p>
+
+			<section class="section card">
+				<h2>Profile</h2>
+				<form id="profileForm" class="form-grid">
+					<div class="form-row">
+						<div>
+							<label for="profile_username">Username</label>
+							<input id="profile_username" name="username" required>
+						</div>
+						<div>
+							<label for="profile_email">Email</label>
+							<input id="profile_email" name="email" type="email" required>
+						</div>
+					</div>
+					<div>
+						<label for="profile_image">Profile Image URL</label>
+						<input id="profile_image" name="profile_image">
+					</div>
+					<button type="submit">Save Profile</button>
+				</form>
+				<p id="profileMsg" class="hidden"></p>
+			</section>
+
+			<section class="section card">
+				<h2>Bio</h2>
+				<form id="bioForm" class="form-grid">
+					<div>
+						<label for="bio_content">Bio Content</label>
+						<textarea id="bio_content" name="content" required></textarea>
+					</div>
+					<button type="submit">Save Bio</button>
+				</form>
+				<p id="bioMsg" class="hidden"></p>
+			</section>
+
+			<section class="section card">
+				<h2>Change Password</h2>
+				<form id="passwordForm" class="form-grid">
+					<div class="form-row">
+						<div>
+							<label for="current_password">Current Password</label>
+							<input id="current_password" name="current_password" type="password" required>
+						</div>
+						<div>
+							<label for="new_password">New Password</label>
+							<input id="new_password" name="new_password" type="password" required>
+						</div>
+						<div>
+							<label for="confirm_password">Confirm New Password</label>
+							<input id="confirm_password" name="confirm_password" type="password" required>
+						</div>
+					</div>
+					<button type="submit">Change Password</button>
+				</form>
+				<p id="passwordMsg" class="hidden"></p>
+			</section>
+
+			<section class="section card">
+				<h2>Reset Password</h2>
+				<form id="resetForm" class="form-grid">
+					<div class="form-row">
+						<div>
+							<label for="reset_new_password">New Password</label>
+							<input id="reset_new_password" name="new_password" type="password" required>
+						</div>
+						<div>
+							<label for="reset_confirm_password">Confirm New Password</label>
+							<input id="reset_confirm_password" name="confirm_password" type="password" required>
+						</div>
+					</div>
+					<button type="submit">Reset Password</button>
+				</form>
+				<p id="resetMsg" class="hidden"></p>
+			</section>
+		</main>
+	</div>
+</body>
+</html>
